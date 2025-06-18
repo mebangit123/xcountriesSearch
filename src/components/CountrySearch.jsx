@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import style from './CountrySearch.module.css'
+import CountryCard from './CountryCard'
 import axios from "axios";
 
 export default function Countries() {
@@ -57,10 +58,7 @@ export default function Countries() {
             <div className={style.wrapper}>
                 {
                         filterCountries.map((country, idx) => (
-                            <div className={style.countryCard} key={country.common}>
-                                <img src={country.png} alt={`Flag of ${country.common}`} height='100' width='100' />
-                                <h5>{country.common}</h5>
-                            </div>
+                            <CountryCard country={country} key={idx}/>
                         ))
                 } 
             </div>
