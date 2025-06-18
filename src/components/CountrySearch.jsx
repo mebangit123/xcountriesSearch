@@ -58,7 +58,9 @@ export default function Countries() {
             <div className={style.wrapper}>
                 {
                         filterCountries.map((country, idx) => (
-                            <CountryCard country={country} key={idx}/>
+                            <div className={style.CountryCard}>
+                                <CountryCard country={country} key={idx}/>
+                            </div>                            
                         ))
                 } 
             </div>
